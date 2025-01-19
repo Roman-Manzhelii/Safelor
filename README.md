@@ -150,22 +150,6 @@ $ python app.py
 
 ---
 
-## 🔗 Related Resources
-
-### Documentation
-[Version Control for Documentation](https://docs.google.com/document/d/17qJUy0vzhcmtaKfszd3FzIeolDPazGJfEWYTUa53lFk/edit?tab=t.0)
-
-### Scrum Management
-[Scrumwise Dashboard](https://www.scrumwise.com/scrum/#/overview/project/l8-sd3a-2024-25-safetyfirst/id-31429-106025-181)
-
-### Project Portfolio
-[Mahara Pages](https://mahara.dkit.ie/view/view.php?t=vlGZ1JKxBejAOgznD5SM)
-
-### Safelor Mobile App
-GitHub Repository: [Safelor Mobile App](https://github.com/seanMooney1996/SafelorWorkerApp)
-
----
-
 ## 🔧 Development
 
 ### Folder Structure
