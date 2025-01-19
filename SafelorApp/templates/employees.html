@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block body %}
+<div class="ep_main_container">
+  <h1 class="ep_title_main">Employees</h1>
+
+
+  <table class="ep_table">
+    <thead class="ep_table_head">
+      <tr class="ep_table_row ep_table_head_row">
+        <th class="ep_table_header">First Name</th>
+        <th class="ep_table_header">Last Name</th>
+        <th class="ep_table_header">Access To</th>
+        <th class="ep_table_header">Email</th>
+      </tr>
+    </thead>
+    <tbody class="ep_table_body">
+      {% for emp in employees %}
+      <tr
+        class="ep_table_row ep_table_body_row clickableRow"
+        onclick="handleEmployeeRowClick({{emp['emp_id']}})"
+      >
+        <td class="ep_table_cell">{{ emp['f_name'] }}</td>
+        <td class="ep_table_cell">{{ emp['s_name'] }}</td>
+        <td class="ep_table_cell">
+            {% for zone_id in emp['access_to'] %}
+            {{ zone_map[zone_id]['zone_name'] }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        
+        </td>
+        <td class="ep_table_cell">{{ emp['work_email'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+  <script>
+    function handleEmployeeRowClick(empId) {
+      window.location.href = `/employee?employee_id=${empId}`;
+    }
+  </script>
+</div>
+
+{% endblock %}

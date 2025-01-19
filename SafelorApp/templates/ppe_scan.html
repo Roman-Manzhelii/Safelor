@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block body %}
+
+<div class="ppe_container_main">
+  
+  <h1 class="ppe_title">Invalid PPE detected </h1>
+  {% if scan_object.HZoneEntered == true %}
+  <div class="zone_entered">
+    <i class="fa-solid fa-circle-exclamation fa-beat" style="color: white;"></i>
+    <h3 class="ppe_title_sub">Zone has been entered</h1>
+  </div>
+  {% else %}
+  <div class="zone_not_entered">
+    <h3 class="ppe_title_sub">Zone has not been entered</h1>
+  </div>
+  {% endif %}
+
+ 
+
+
+
+  <!-- <p>{{ scan_object }}</p> -->
+  <div class="ppe_container_child">
+    <div class="ppe_photo_and_user">
+      <div class="ppe_photo" style="background-image: url('{{ image_data }}'); background-size: cover; background-position: center;">
+      </div>
+      {% if scan_object.emp_id %}
+      <form action="/employee?employee_id={{scan_object.emp_id}}" method="POST">
+        <button type="submit" class="ppe_profile_btn">Open Profile</button>
+      </form>
+      {% endif %}
+    </div>
+    <div class="ppe_items_container">
+      <table class="ppe_items_table">
+        <tbody>
+        
+          {% set item_icons = [ '<i class="fa-solid fa-helmet-safety"></i>', '<i class="fa-solid fa-vest"></i>',  '<i class="fa-solid fa-shoe-prints"></i>'] %}
+
+
+
+          {% for i in range(3) %}
+          {% if i+1 in scan_object.current_requirements%}
+            <tr>
+              <td>
+                {% if i + 1 in scan_object.ppe_missing %}
+                  <p><i class="fa-solid fa-xmark fa-beat" style="color: #600a0a"></i></p>
+                {% else %}
+                  <p><i class="fa-solid fa-check" style="color: #008000"></i></p>
+                {% endif %}
+              </td>
+              <td>
+                
+                <h3 class="item_icons_h3">{{ item_icons[i]|safe }}</h3>
+              </td>
+            </tr>
+            {%endif%}
+          {% endfor %}
+        
+      
+        </tbody>
+       
+      </table>
+      <div class="ppe_extra_stats">
+        <h3>Employee id: {{scan_object.emp_id}}</h3>
+        <h3>Time: {{scan_object.data_time}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    triggerScanChecked("{{scan_id}}"); 
+});
+</script>
+{% endblock %}

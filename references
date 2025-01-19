@@ -1,0 +1,13 @@
+Jinja 2 size of array:
+{{ emp_scans|length }}
+https://stackoverflow.com/questions/1465249/get-lengths-of-a-list-in-a-jinja2-template
+
+Jinja 2 sorting the array:
+{% for scan in emp_scans | sort(attribute='data_time', reverse=True) %}
+https://stackoverflow.com/questions/1959386/how-do-you-sort-a-list-in-jinja2
+
+Background color gradient animations:
+https://www.gradient-animator.com/
+
+ICONS AND ICON ANIMATIONS:
+https://fontawesome.com/search?s=solid&f=classic&o=r

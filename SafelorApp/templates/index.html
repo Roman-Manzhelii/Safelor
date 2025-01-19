@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login to Safelor</title>
+
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.9.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/auth.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="auth_main_container">
+      <div class="auth_first_half">
+        <div class="auth_first_half_image_div">
+          <img src="../static/bubbles_back_big.png" class="auth_logo" />
+        </div>
+      </div>
+      <div class="auth_second_half">
+        <!-- <div class="right_side_wrapper"> -->
+        <div class="auth_s_half_upper_text_cont">
+          <div class="auth_text_parent">
+            <h2 class="auth_text">Login with <span class="google_golden">Google</span></h2>
+          </div>
+
+          <form action="/google_login">
+            <button type="submit" class="auth_btn_google">
+              <i class="fa-brands fa-google"></i>
+            </button>
+          </form>
+        </div>
+        <div class="auth_text_parent_slogan">
+          <h2 class="auth_text_slogan">Remember, it's safety first.</h2>
+          <h3 class="auth_text_slogan_second">- The Safelor team</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <body>
+    <div class="auth_container">
+      <div class="auth_big_half">
+        <div class="auth_logo_container">
+          <img src="../static/logo_safelor.png" class="auth_logo" />
+        </div>
+      </div>
+
+      <div class="auth_big_half2">
+        <div class="auth_login_box">
+          <div class="auth_login_container">
+            <h2>LOG IN WITH GOOGLE</h2>
+          </div>
+          <div class="auth_form_container">
+           
+            <form class="auth_btn_google" action="/google_login">
+              <button type="submit" class="auth_btn_google">
+                <i class="fa-brands fa-google"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body> -->
+</html>
+
+<!-- <form class="auth_form_container" action="/login">
+            <div class="auth_login_form_group">
+              <label for="empnumber" class="auth_form_label"
+                >Employee Number</label
+              >
+              <input
+                type="text"
+                id="empnumber"
+                autocomplete="off"
+                autofocus
+                required
+                placeholder="e.g. 994812"
+              />
+            </div>
+            <div class="auth_login_form_group">
+              <label for="password" class="auth_form_label">Password</label>
+              <input
+                type="password"
+                id="password"
+                autocomplete="off"
+                autofocus
+                required
+                placeholder="**********"
+              />
+            </div>
+            <div class="auth_login_remember_me">
+              <input type="checkbox" id="rememberMe" />
+              <label for="rememberMe">Remember Me</label>
+            </div>
+            <div class="auth_login_form_group">
+              <button type="submit" class="auth_btn_login_submit">
+                Ready to sail!
+              </button>
+            </div>
+          </form> -->

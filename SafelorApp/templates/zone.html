@@ -1,0 +1,116 @@
+{% extends "layout.html" %} {% block body %}
+<div id="z_main_container">
+  <h1 id="z_main_name">{{zone.zone_name}}</h1>
+
+  <!-- {'_id': ObjectId('67211c23246ed2f2ecc3938d'), 'zone_id': 1, 'zone_name': 'Welding Area', 'ppe_required': [1, 2, 3]} -->
+  <div id="z_main_toppom">
+    <div id="z_scan_history_before_statistics">
+      <div id="z_main_name_sub_container">
+        <h3 id="z_main_name_sub">REQUIRED PPE:</h3>
+      </div>
+
+      <div id="z_main_name_two">
+        {% for scan in zone.ppe_required %} {% if scan == 1%}
+        <i class="fa-solid fa-helmet-safety"></i>
+        {% endif %} {% if scan == 2%}
+        <i class="fa-solid fa-vest"></i>
+        {% endif %} {% if scan == 3%}
+        <i class="fa-solid fa-shoe-prints"></i>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+    {%if scans%}
+    <div id="z_scan_history_statistics">
+      <div>
+        <span id="z_main_name_three"
+          >{{ zone_stats.percentageMissingPPE }} <</span
+        >
+        <span id="z_main_name_four"><i class="fa-solid fa-percent"></i></span>
+      </div>
+
+      <p id="of_scans_detect_lack_of_ppe">
+        of scans detect lack of PPE equipment
+      </p>
+    </div>
+
+    {%else%}
+    <h1 class="emp_title_extra">No Scans yet</h1>
+
+    {%endif%}
+
+  </div>
+
+  <div id="z_scans_container">
+    <div id="z_scan_history_data_div_parent">
+      {% for scan in scans %}
+      <!-- <{'_id': ObjectId('67477b16ab6a2ffae19bf9e0'), 'emp_id': 1001, 'zone_id': 1, 'ppe_missing': [2, 3], 'data_time': '2024-11-27 20:03:34', 
+    'HZoneEntered': True, 'emp_identified': True, 'scan_image_id': '67477b12f8f7f06c88d9b429', 'checked': True} -->
+
+      <div
+        id="z_scan_history_data_div"
+        class="clickableRow"
+        onclick="handleScanRowClick('{{ scan['_id'] | string }}')"
+      >
+        <div id="z_main_name_sub_container">
+          <h1 id="z_main_name_sub_gold">
+            {% if scan.ppe_missing | length == 0%} VALID SCAN {%else%} INVALID
+            SCAN {%endif%}
+          </h1>
+        </div>
+        <div id="z_inner_container_data_sub">
+          <div id="z_main_name_sub_container">
+            <h2 id="z_main_name_sub">Employee:</h2>
+            {% if scan.emp_id is not none and scan.emp_id != 0 %}
+            <span class="margin1">{{scan.emp_id}}</span>
+            {%else%}
+            <span class="margin1">Unidentified</span>
+            {% endif %}
+          </div>
+          <div id="z_main_name_sub_container">
+            <h2 id="z_main_name_sub">Requirements:</h2>
+            {% if scan.ppe_missing | length == 0%}
+            <p class="margin1">None</p>
+            {%else%} {% for scan in scan.current_requirements %} {% if scan ==
+            1%}
+            <i class="fa-solid fa-helmet-safety margin1"></i>
+            {% endif %} {% if scan == 2%}
+            <i class="fa-solid fa-vest margin1"></i>
+            {% endif %} {% if scan == 3%}
+            <i class="fa-solid fa-shoe-prints margin1"></i>
+            {% endif %} {% endfor %} {%endif%}
+          </div>
+          <div id="z_main_name_sub_container">
+            <h2 id="z_main_name_sub">Missing PPE:</h2>
+            {% if scan.ppe_missing | length == 0%}
+            <p class="margin1">None</p>
+            {%else%} {% for scan in scan.ppe_missing %} {% if scan == 1%}
+            <i class="fa-solid fa-helmet-safety margin1"></i>
+            {% endif %} {% if scan == 2%}
+            <i class="fa-solid fa-vest margin1"></i>
+            {% endif %} {% if scan == 3%}
+            <i class="fa-solid fa-shoe-prints margin1"></i>
+            {% endif %} {% endfor %} {%endif%}
+          </div>
+          <div id="z_main_name_sub_container">
+            <span style="color: #d68383">{{scan.data_time}}</span>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  function handleScanRowClick(scanId) {
+    window.location.href = `/ppe_scan?scan_id=${scanId}`;
+  }
+  const element = document.getElementById("z_main_name_three");
+
+  const originalValue = parseFloat(element.textContent);
+  if (!isNaN(originalValue)) {
+    element.textContent = Math.round(originalValue);
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unauthorized Access</title>
+
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.9.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/auth.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/unauth.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="unauth_container">
+      <h2 class="unauth_golden_text">Error found <i class="fa-solid fa-ship"></i></h2>
+      <form action="/"  method="get">
+        <button class="unauth_btn_go_back" type="submit">
+          <p class="within_gold_btn_unauth">Take me to login page</p>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

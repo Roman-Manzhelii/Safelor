@@ -1,0 +1,169 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- <h1>employee</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Access Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ employee['emp_id'] }}</td>
+                <td>{{ employee['f_name'] }}</td>
+                <td>{{ employee['s_name'] }}</td>
+            </tr>
+            {% for scan in emp_scans %}
+            <tr>
+                <td>{{scan}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <img src="{{ image_data }}"> -->
+<div class="outline_container_main">
+  <h1 class="emp_title">EMPLOYEE PROFILE</h1>
+
+  <div class="emp_container_main">
+    <div class="emp_container_child">
+      <div class="emp_photo_and_user">
+        <div class="emp_details_div">
+          <img src="{{ image_data }}" class="emp_image_container" />
+          <div>
+            <p class="employe_det_par">First Name: {{ employee['f_name'] }}</p>
+            <p class="employe_det_par">Last Name: {{ employee['s_name'] }}</p>
+            <p class="employe_det_par_id">
+              Employee ID: {{ employee['emp_id'] }}
+            </p>
+          </div>
+        </div>
+
+        <div class="num_invalid_ppe">
+          <p>Number of invalid PPE detections:</p>
+          <span class="invalid_ppe_count">{{ emp_scans|length }}</span>
+        </div>
+
+        {%if emp_scans|length>0%}
+        <div id="z_scan_history_statistics_extra">
+          <div>
+            <span id="z_main_name_three"
+              >{{ emp_stats.percentageMissingPPE }}</span
+            >
+            <span id="z_main_name_four"
+              ><i class="fa-solid fa-percent"></i
+            ></span>
+          </div>
+          <p id="of_scans_detect_lack_of_ppe">
+            out of {{ emp_stats.totalScans }} total scans detected lack of PPE
+            equipment
+          </p>
+        </div>
+        {%else%}
+        <h1 class="emp_title_extra">No Scans yet</h1>
+
+        {%endif%}
+
+
+        <button
+          class="btn_send_warning"
+          id="btn_warning_clicking"
+          onclick="handleWarningButtonClick('{{ employee['emp_id'] }}')"
+        >
+          CLICK TO WARN
+        </button>
+      </div>
+    </div>
+    <div class="emp_scans">
+      {%if emp_scans|length>0%}
+
+      <table>
+        <thead>
+          <tr>
+            <th>Data Time</th>
+            <th>PPE Missing</th>
+            <th>Scan Image ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%if emp_scans|length > 0%} {% for scan in emp_scans |
+          sort(attribute='data_time', reverse=True) %}
+          <tr
+            class="clickableRow"
+            onclick="handleScanRowClick('{{ scan['_id'] | string }}')"
+          >
+            <td>{{ scan.data_time }}</td>
+            <td>
+              {% if 1 in scan.ppe_missing %}
+              <i class="fa-solid fa-helmet-safety"></i>
+              {% endif %} {% if 2 in scan.ppe_missing %}
+              <i class="fa-solid fa-vest"></i>
+              {% endif %} {% if 3 in scan.ppe_missing %}
+              <i class="fa-solid fa-shoe-prints"></i>
+              {% endif %}
+            </td>
+            <td>{{ scan.scan_image_id }}</td>
+          </tr>
+          {% endfor %} {%endif%}
+        </tbody>
+     
+
+      </table>
+  
+      {%endif%}
+    </div>
+  </div>
+</div>
+<script>
+  function handleScanRowClick(scanId) {
+    window.location.href = `/ppe_scan?scan_id=${scanId}`;
+  }
+  function handleWarningButtonClick(empId) {
+    fetch(`/send_warning/${empId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); // Parse JSON response
+      })
+      .then((data) => {
+        console.log("Warning sent successfully:", data);
+
+        // Display success notification
+        const notificationContainer =
+          document.getElementById("warning-container");
+        notificationContainer.style.display = "block";
+        notificationContainer.innerHTML = `
+                <div>
+                    <i class="fa-solid fa-envelope fa-beat" style="font-size: 1.5em; margin-right: 2vh"></i>
+                    <strong>A warning has been sent!</strong> 
+                </div>
+            `;
+        setTimeout(() => (notificationContainer.style.display = "none"), 10000);
+      })
+      .catch((error) => {
+        console.error("Error sending warning:", error);
+        alert("Failed to send the warning.");
+      });
+  }
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const element = document.getElementById("z_main_name_three");
+    const rawValue = parseFloat(element.innerText); 
+    if (!isNaN(rawValue)) {
+      element.innerText = rawValue.toFixed(0);
+    } else {
+      console.error("Invalid number in emp_stats.percentageMissingPPE");
+    }
+  });
+</script>
+{% endblock %}

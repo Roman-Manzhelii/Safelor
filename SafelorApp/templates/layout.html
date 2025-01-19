@@ -1,0 +1,187 @@
+<!-- VIEW -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login to Safelor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/alldep.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/settings.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/zones.css') }}"
+    />
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/allemp.css') }}"
+  />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/invalidppe.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/employeeprof.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/employees.css') }}"
+    />
+
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.9.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="ad_nav_bar">
+      <img src="../static/logo_safelor.png" class="nav_logo_image" />
+      <div class="ad_nav_child_buttons">
+        <button class="ad_nav_btn" id="btn_dep">
+          <i class="fa-solid fa-city"></i>
+        </button>
+        <button class="ad_nav_btn" id="btn_user">
+          <i class="fa-solid fa-users"></i>
+        </button>
+        <button class="ad_nav_btn_logout" id="logout_navbar_btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+        <!-- <button id="invalid_ppe_take_me_there_dummy">PPE_dummy_btn</button>-->
+        <!-- <button onclick="handleScanViolation('lol')">message</button>  -->
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/pubnub.js') }}"></script>
+
+    <div id="notification-container" class="not_container"></div>
+    <div id="warning-container" class="war_container"></div>
+
+    <div
+      id="notif_dropdown_container"
+      class="notification_dropdown_container"
+      onload="getNotifications()"
+    >
+      <div class="notif_cont_child_part">
+        <i class="fa-solid fa-bell" id="bell_always"></i>
+        <i class="fa-solid fa-bell fa-shake" id="bell_always_two"></i>
+      </div>
+
+      <!-- <i class="fa-regular fa-bell fa-shake" id="bell_hoverEf"></i> -->
+      <div id="id_dropdown_notifications_container">
+        <div id="no_notific_found_container">
+          <h3>No notifications found</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="side_notifications"></div>
+
+    {% block body %} {% endblock %}
+
+    <script>
+      document
+        .getElementById("logout_navbar_btn")
+        .addEventListener("click", function () {
+          window.location.href = "/logout";
+        });
+
+      document.getElementById("btn_dep").addEventListener("click", function () {
+        window.location.href = "/zones";
+      });
+
+      document
+        .getElementById("btn_user")
+        .addEventListener("click", function () {
+          window.location.href = "/employees";
+        });
+
+      /*document;
+      getElementById("bell_always").addEventListener("click", function () {
+        console.log("clicked");
+        const dropdown = document.getElementById(
+          "id_dropdown_notifications_container"
+        );
+        if (dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+        } else {
+          dropdown.style.display = "block";
+        }
+      });*/
+
+      const lockerEle3 = document.getElementsByClassName(
+        "notif_cont_child_part"
+      );
+
+      for (let element of lockerEle3) {
+        element.addEventListener("click", function () {
+          const dropdown = document.getElementById(
+            "id_dropdown_notifications_container"
+          );
+          if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+          } else {
+            dropdown.style.display = "block";
+          }
+        });
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+        var lockerEle1 = document.getElementsByClassName("s_option_locker1");
+        var lockerEle2 = document.getElementsByClassName("s_option_locker2");
+        var lockerEle4 = document.getElementsByClassName("s_option_locker3");
+      
+        for (let element of lockerEle1) {
+          element.addEventListener("click", function () {
+            const container = document.querySelector(".s_option_subdivs_container1");
+            container.classList.remove("s_option_subdivs_container1");
+            container.classList.add("s_option_subdivs_container_unlocked");
+          });
+        }
+      
+        for (let element of lockerEle2) {
+          element.addEventListener("click", function () {
+            event.preventDefault(); 
+            const container = document.querySelector(".s_option_subdivs_container2");
+            container.classList.remove("s_option_subdivs_container2");
+            container.classList.add("s_option_subdivs_container_unlocked");
+          });
+        }
+      
+        for (let element of lockerEle4) {
+          element.addEventListener("click", function () {
+            event.preventDefault(); 
+            const container = document.querySelector(".s_option_subdivs_container3");
+            container.classList.remove("s_option_subdivs_container3");
+            container.classList.add("s_option_subdivs_container_unlocked");
+          });
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

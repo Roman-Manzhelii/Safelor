@@ -1,0 +1,114 @@
+{% extends "layout.html" %} {% block body %}
+<div id="set_settings_main_container">
+  <h1 id="s_main_name">{{zone.zone_name}}</h1>
+  <div id="set_settings_sub_container">
+    <form method="POST" action="/update_requirements">
+      <input type="hidden" name="zone_id" value="{{ zone_id }}" />
+
+      <div class="s_option_container_main">
+        <div class="s_option_locker1">
+          <td class="s_table_cell">
+            <i class="fa-solid fa-lock" style="color: #eeeeef"></i>
+          </td>
+        </div>
+        <div class="s_option_subdivs_container1" id="s_option_cont_1">
+          <div class="s_option_container_subdivs">
+            <input
+              class="s_checkboxes"
+              type="checkbox"
+              name="required_ppe"
+              value="1"
+              {%
+              if
+              1
+              in
+              required_ppe
+              %}checked{%
+              endif
+              %}
+            />
+          </div>
+
+          <div class="s_option_container_subdivs">
+            <i class="fa-solid fa-helmet-safety"></i>
+          </div>
+          <div class="s_option_container_subdivs">
+            <span style="font-variant: small-caps; color: #806d09">Helmet</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="s_option_container_main">
+        <div class="s_option_locker2">
+          <td class="s_table_cell">
+            <i class="fa-solid fa-lock" style="color: #eeeeef"></i>
+          </td>
+        </div>
+        <div class="s_option_subdivs_container2">
+          <div class="s_option_container_subdivs">
+            <input
+              class="s_checkboxes"
+              type="checkbox"
+              name="required_ppe"
+              value="2"
+              {%
+              if
+              2
+              in
+              required_ppe
+              %}checked{%
+              endif
+              %}
+            />
+          </div>
+          <div class="s_option_container_subdivs">
+            <i class="fa-solid fa-vest"></i>
+          </div>
+          <div class="s_option_container_subdivs">
+            <span style="font-variant: small-caps; color: #806d09">Vest</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="s_option_container_main">
+        <div class="s_option_locker3">
+          <td class="s_table_cell">
+            <i class="fa-solid fa-lock" style="color: #eeeeef"></i>
+          </td>
+        </div>
+        <div class="s_option_subdivs_container3">
+          <div class="s_option_container_subdivs">
+            <input
+              class="s_checkboxes"
+              type="checkbox"
+              name="required_ppe"
+              value="3"
+              {%
+              if
+              3
+              in
+              required_ppe
+              %}checked{%
+              endif
+              %}
+            />
+          </div>
+          <div class="s_option_container_subdivs">
+            <i class="fa-solid fa-shoe-prints"></i>
+          </div>
+          <div class="s_option_container_subdivs">
+            <span style="font-variant: small-caps; color: #806d09">Boots</span>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="set_submit_btn">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </form>
+  </div>
+
+</div>
+
+
+{% endblock %}

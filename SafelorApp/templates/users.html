@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+    <h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Access Level</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user['user_id'] }}</td>
+                <td>{{ user['f_name'] }}</td>
+                <td>{{ user['s_name'] }}</td>
+                <td>{{ user['access_level'] }}</td>
+                <td>{{ user['email'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

@@ -1,0 +1,540 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    height: -webkit-fill-available;
+    max-width: -webkit-fill-available;
+    background-color: #EEEEFF;
+}
+
+
+.auth_btn_google {
+    padding: 1.5vh;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(34deg, #04151f, #07214d, #11587e, #07214d);
+    border: none;
+    cursor: pointer;
+    border-radius: 10vh;
+    min-width: 20vh;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.auth_btn_google:hover {
+    transform: translateY(-10px);
+    /* background: linear-gradient(45deg, #34A853, #FBBC05, #EA4335, #4285F4);
+    transform: scale(1.05); */
+}
+
+
+
+.auth_btn_google_form {
+    padding: 1.5vh;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    border: none;
+    cursor: pointer;
+    border-radius: 10vh;
+    min-width: 20vh;
+    transition: transform 0.3s ease;
+}
+
+.auth_btn_google_form:hover {
+    transform: translateY(-10px);
+    /* background: linear-gradient(45deg, #34A853, #FBBC05, #EA4335, #4285F4);
+    transform: scale(1.05); */
+}
+
+
+.auth_main_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.auth_first_half {
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.auth_s_half_upper_text_cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* align-content: flex-start; */
+    flex-wrap: nowrap;
+}
+
+.auth_second_half {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(45deg, #34A853, #FBBC05, #EA4335, #4285F4); */
+    background: linear-gradient(34deg, #04151f, #07214d, #1a4962, #133f57);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.auth_text_parent_slogan {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.auth_text {
+    font-size: 3em;
+    font-weight: bold;
+    background: linear-gradient(34deg, #e5e8e9, #bdc6ca, #aebabe, #a3b7c1);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 5vh;
+    font-variant: small-caps;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.google_golden {
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+.auth_text_slogan {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 5vh;
+    font-variant: small-caps;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+
+.auth_text_slogan_second {
+    font-size: 1.5em;
+    font-weight: bold;
+ 
+    margin-bottom: 5vh;
+    font-variant: small-caps;
+
+    background: linear-gradient(34deg, #e5e8e9, #bdc6ca, #aebabe, #a3b7c1);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right_side_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #EEEEFF;
+    padding: 5vh;
+    border-radius: 10vh;
+}
+
+
+
+
+
+.auth_first_half_image_div {
+    max-width: 90vh;
+    max-height: 90vh;
+}
+
+.auth_logo {
+    max-width: inherit;
+    max-height: inherit;
+}
+
+@media (max-width: 1080px) {
+
+    .auth_text {
+        display: flex;
+        font-size: 3em;
+        font-weight: bold;
+        background: linear-gradient(34deg, #e5e8e9, #bdc6ca, #aebabe, #a3b7c1);
+        background-size: 800% 800%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 5vh;
+        font-variant: small-caps;
+        -webkit-animation: AnimationName 5s ease infinite;
+        -moz-animation: AnimationName 5s ease infinite;
+        animation: AnimationName 5s ease infinite;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth_text_parent_slogan {
+        display: none;
+    }
+
+    .auth_first_half_image_div {
+        max-width: -webkit-fill-available;
+        max-height: -webkit-fill-available;
+    }
+
+    .auth_main_container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .auth_first_half {
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth_second_half {
+        width: 100%;
+        height: 50vh;
+        justify-content: center;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    height: -webkit-fill-available;
+    max-width: -webkit-fill-available;
+    background-color: #EEEEFF;
+    overflow: hidden;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.auth_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100%;
+    justify-content: center;
+}
+
+.auth_logo {
+    width: 100%;
+}
+
+.auth_login_box {
+    background-color: #04151F;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 10%;
+    width: 40vh;
+}
+
+.auth_login_box h2 {
+    margin-bottom: 4vh;
+    color: white;
+}
+
+/* form */
+/* 
+.auth_form_container {
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth_login_remember_me {
+    margin-bottom: 3vh;
+}
+
+.auth_login_form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5vh;
+}
+
+.auth_form_label {
+    margin-bottom: 1vh;
+    font-size: 1em;
+    color: #ddd;
+}
+
+.auth_btn_login_submit {
+    padding: 1.5vh;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #3a6e4f;
+    border: none;
+    cursor: pointer;
+    border-radius: 10vh;
+    transition: transform 0.5s ease;
+}
+
+.auth_btn_login_submit:hover {
+    transform: translateY(-10px);
+    background-color: #2d573e;
+}
+
+.auth_btn_google {
+    padding: 1.5vh;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    border: none;
+    cursor: pointer;
+    border-radius: 10vh;
+    min-width: -webkit-fill-available;
+    transition: transform 0.3s ease;
+}
+
+.auth_btn_google:hover {
+    /* transform: translateY(-10px); */
+/* background: linear-gradient(45deg, #34A853, #FBBC05, #EA4335, #4285F4);
+    transform: scale(1.05);
+} */
+
+/* 
+.auth_login_form_group input[type="text"],
+.auth_login_form_group input[type="password"] {
+    width: 100%;
+    padding: 1.5vh;
+    border-radius: 10vh;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+
+.auth_big_half {
+    background-color: #EA4335;
+}
+
+.auth_big_half2 {
+    background-color: blue;
+
+}
+
+
+
+@media (max-width: 1080px) {
+    .auth_big_half {
+        background-color: #EA4335;
+        max-width: 50vh;
+        max-height: 50vh;
+    }
+
+    .auth_big_half2 {
+        background-color: blue;
+        max-width: 50vh;
+        max-height: 50vh;
+
+    }
+    .auth_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}   */

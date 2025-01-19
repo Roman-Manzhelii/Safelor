@@ -1,0 +1,121 @@
+.unauth_container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(34deg, #04151f, #07214d, #1a4962, #133f57);
+    background-size: 800% 800%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.unauth_golden_text {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 5vh;
+    font-variant: small-caps;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+
+.within_gold_btn_unauth {
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-variant: small-caps;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+.unauth_btn_go_back {
+    padding: 1.5vh;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(34deg, #04151f, #07214d, #11587e, #07214d);
+    border: none;
+    cursor: pointer;
+    border-radius: 10vh;
+    min-width: 20vh;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@media (max-width: 1080px) {
+
+
+
+    .unauth_golden_text {
+        font-size: 1.5em;
+        font-weight: bold;
+        background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+        background-size: 800% 800%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 5vh;
+        font-variant: small-caps;
+        -webkit-animation: AnimationName 5s ease infinite;
+        -moz-animation: AnimationName 5s ease infinite;
+        animation: AnimationName 5s ease infinite;
+    }
+
+}

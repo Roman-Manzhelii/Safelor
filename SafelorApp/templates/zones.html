@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block body %}
+
+<div class="zones_container_of_all_zones">
+  {% for zone in zones %}
+  <div class="zones_container_child">
+    <div class="zones_active_status" id="online_status_{{zone['zone_id']}}"></div>
+    <h2 class="zone_child_title">{{ zone['zone_name'] }}</h2>
+    <div class="zone_child_part_container_ppe_btn">
+      <div class="zone_ppe_div_container">
+        {% for ppe_id in zone['ppe_required'] %}
+        <p style="font-variant: small-caps; color: #806d09;" >
+          {% if ppe.get(ppe_id)['name'] == 'helmet' %}
+          <i class="fa-solid fa-helmet-safety"></i>
+          {% elif ppe.get(ppe_id)['name'] == 'vest' %}
+          <i class="fa-solid fa-vest"></i>
+          {% else %}
+          <i class="fa-solid fa-shoe-prints"></i>
+          {% endif %}
+        </p>
+        {% endfor %}
+      </div>
+      <div class="zone_child_part_buttons_container">
+        <a href="/zone?zone_id={{ zone['zone_id'] }}">
+          <button class="zones_container_chil_btn">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+        </a>
+        <a href="/zone_settings?zone_id={{ zone['zone_id'] }}">
+        <button class="zones_container_chil_btn">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setZoneStatusColors(); 
+});
+</script>
+{% endblock %}

@@ -1,0 +1,304 @@
+#z_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+#z_scans_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 2vh;
+    align-items: flex-start;
+}
+
+#z_main_name {
+    margin-top: 5vh;
+    padding-top: 5vh;
+    font-size: 2.5em;
+    color: white;
+    margin: 0;
+    margin-bottom: 2vh;
+    font-variant: small-caps;
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+#z_main_name_sub {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+    font-variant: all-petite-caps;
+    background: linear-gradient(34deg, #600a0a, #9c1d1d, #270404, #ca3e3e);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+#z_main_name_sub_container {
+    padding-left: 2vh;
+    border-radius: 10vh;
+    padding-right: 2vh;
+    background-color: #EEEEFF;
+    margin-bottom: 2vh;
+    display: flex;
+    margin-top: 2vh;
+    align-items: center;
+}
+
+#z_main_name_sub_gold {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+    font-variant: all-petite-caps;
+    background: linear-gradient(34deg, #fbbc05, #695005, #695005, #695005);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+#z_scan_history_data_div {
+    position: relative;
+    background-color: #1A4962;
+    margin-top: 2vh;
+    display: flex;
+    width: 40vh;
+    border-radius: 7vh;
+    padding: 2vh;
+    background: #EEEEFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* background: linear-gradient(34deg, #04151f, #07214d, #1a4962, #133f57); */
+    background-size: 800% 800%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    transition: transform 0.5s ease;
+    animation: AnimationName 5s ease infinite;
+    flex-direction: column;
+    align-items: center;
+}
+
+#z_scan_history_data_div:hover {
+    transform: translateY(-10px);
+}
+
+#z_invalid_scan_data_groups {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+#z_inner_container_data_sub {
+    width: 100%;
+}
+
+#z_scan_history_data_div_parent {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#z_main_toppom {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#z_scan_history_before_statistics {
+    margin-right: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#z_scan_history_statistics {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#z_scan_history_statistics_extra {
+    width: 40%;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+
+#z_main_name_two {
+    margin-top: 5vh;
+    font-size: 2em;
+    color: white;
+    margin: 0;
+    margin-bottom: 2vh;
+    font-variant: small-caps;
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+
+#z_main_name_three {
+    margin-top: 5vh;
+    font-size: 2.5em;
+    color: white;
+    margin: 0;
+    margin-bottom: 2vh;
+    font-variant: small-caps;
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+#z_main_name_four {
+    margin-top: 5vh;
+    font-size: 2em;
+    color: white;
+    margin: 0;
+    margin-bottom: 2vh;
+    font-variant: small-caps;
+    background: linear-gradient(34deg, #fbbc05, #695005, #fbbc05, #4285f4);
+    background-size: 800% 800%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+#of_scans_detect_lack_of_ppe {
+    font-size: 1em;
+    color: #fbbc05;
+    margin: 0;
+    margin-bottom: 2vh;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+.margin1 { 
+    margin: 2px 0 0 5px;
+
+}
+
+
+
+
+@media (max-width: 1080px) {
+
+    #z_main_toppom {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    #z_scan_history_statistics {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
