@@ -202,4 +202,12 @@ Safelor/
 
 ---
 
+
+## 👨‍💼 Contributors
+- [Sean Mooney](https://github.com/seanMooney1996)
+- [Noah Krobot](https://github.com/NoahKrobot)
+- [Isaac Orsaah](https://github.com/isaacorsaah)
+
+---
+
 **Safelor: Building Safer Workplaces.**
